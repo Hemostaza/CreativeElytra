@@ -1,6 +1,7 @@
 package com.hemostaza.creativeElytra;
 
 import com.hemostaza.creativeElytra.listeners.OnArmorEquip;
+import com.hemostaza.creativeElytra.listeners.OnPlayerJoin;
 import com.hemostaza.creativeElytra.listeners.PlayerStartFlight;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +22,7 @@ public final class CreativeElytra extends JavaPlugin {
         ArmorEquipEvent.registerListener(this);
         getServer().getPluginManager().registerEvents(new OnArmorEquip(this), this);
         getServer().getPluginManager().registerEvents(new PlayerStartFlight(), this);
+        getServer().getPluginManager().registerEvents(new OnPlayerJoin(), this);
         // Plugin startup logic
 
     }

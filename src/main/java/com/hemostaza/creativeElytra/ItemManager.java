@@ -24,8 +24,9 @@ public class ItemManager {
         List<String> lore = new ArrayList<>();
         lore.add("Allow you to fly like you always wanted");
         meta.setLore(lore);
-        item.setItemMeta(meta);
+        meta.setEnchantmentGlintOverride(true);
 
+        item.setItemMeta(meta);
         cElytra = item;
     }
 }
