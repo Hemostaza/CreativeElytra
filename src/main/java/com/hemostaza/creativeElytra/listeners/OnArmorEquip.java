@@ -45,7 +45,7 @@ public class OnArmorEquip implements Listener {
         if(isEquippingElytra){
             l.info("zakłądanie elytry bez zdejmowania elytry");
             player.setAllowFlight(true);
-            player.setFlying(true);
+            //player.setFlying(true);
         }else if(isUnequippingElytra){
             l.info("Zdejowanie elytry bez zakladania elytry");
             player.setFlying(false);
