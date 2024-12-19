@@ -1,0 +1,4 @@
+name: creativeElytra
+version: '1.0-SNAPSHOT'
+main: com.hemostaza.creativeElytra.CreativeElytra
+api-version: '1.21'
