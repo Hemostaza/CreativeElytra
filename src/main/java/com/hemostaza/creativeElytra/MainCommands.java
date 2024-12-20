@@ -16,7 +16,7 @@ public class MainCommands implements CommandExecutor {
 
         if(cmd.getName().equalsIgnoreCase("hermes")){
 
-            ItemStack item = ItemManager.cBoots;
+            ItemStack item = ItemManager.cSBoots;
             if(args.length>1){
                 int amount = Integer.parseInt(args[1]);
                 item.setAmount(amount);

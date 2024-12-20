@@ -1,0 +1,7 @@
+boots:
+  name: "Hermes Boots"
+  lore:
+    - "Allows you to fly like you always wanted"
+    - "But have it's limits"
+premiumboots:
+  name: "Premium Hermes Boots"
