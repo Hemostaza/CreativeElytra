@@ -14,9 +14,9 @@ public class MainCommands implements CommandExecutor {
             return true;
         }
 
-        if(cmd.getName().equalsIgnoreCase("celytra")){
+        if(cmd.getName().equalsIgnoreCase("hermes")){
 
-            ItemStack item = ItemManager.cElytra;
+            ItemStack item = ItemManager.cBoots;
             if(args.length>1){
                 int amount = Integer.parseInt(args[1]);
                 item.setAmount(amount);

@@ -1,6 +1,7 @@
 package com.hemostaza.creativeElytra.listeners;
 
 import com.hemostaza.creativeElytra.ItemManager;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -14,15 +15,17 @@ public class OnPlayerJoin implements Listener {
     @EventHandler
     void onPlayerJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
-        ItemStack chest = player.getInventory().getChestplate();
-        if(chest==null)return;
-        if(!chest.getType().equals(Material.ELYTRA)) return;
-        boolean haveElytra = false;
+        ItemStack boots = player.getInventory().getBoots();
+        if(boots==null)return;
+        if(!boots.getType().equals(Material.LEATHER_BOOTS)) return;
+        boolean haveBoots = false;
         try{
-            haveElytra = chest.getItemMeta().getLore().getFirst().equals(ItemManager.cElytra.getItemMeta().getLore());
+            haveBoots = boots.getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore());
         }catch (NullPointerException e){
-
+            Bukkit.getLogger().info("don't have boots");
+            return;
         }
+        if(!haveBoots) return;
         player.setAllowFlight(true);
         if(!((Entity)player).isOnGround()){
             player.setFlying(true);

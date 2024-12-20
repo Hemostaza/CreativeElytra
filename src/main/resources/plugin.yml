@@ -3,7 +3,7 @@ version: '1.0-SNAPSHOT'
 main: com.hemostaza.creativeElytra.CreativeElytra
 api-version: '1.21'
 commands:
-  celytra:
+  hermes:
     description: "chuj"
-    usage: "/celytra <subcommand>"
-    aliases: ["cel"]
+    usage: "/hermes <subcommand>"
+    aliases: ["boots"]

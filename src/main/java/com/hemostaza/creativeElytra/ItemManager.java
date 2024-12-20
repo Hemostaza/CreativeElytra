@@ -1,32 +1,34 @@
 package com.hemostaza.creativeElytra;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.Repairable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ItemManager {
-    public static ItemStack cElytra;
+    //public static ItemStack cElytra;
+    public static ItemStack cBoots;
     public static void init(){
-        createCreativeElytra();
+        createCreativeBoots();
     }
-    private static void createCreativeElytra(){
-        ItemStack item = new ItemStack(Material.ELYTRA,1);
+    private static void createCreativeBoots(){
+        ItemStack item = new ItemStack(Material.LEATHER_BOOTS,1);
         ItemMeta meta = item.getItemMeta();
         assert meta!=null;
 
         ((Damageable) meta).setMaxDamage(10);
 
-        meta.setDisplayName("Creative Elytra");
+        meta.setDisplayName("Hermes Boots");
         List<String> lore = new ArrayList<>();
         lore.add("Allow you to fly like you always wanted");
         meta.setLore(lore);
-        meta.setEnchantmentGlintOverride(true);
-
+        ((Repairable)meta).setRepairCost(50);
         item.setItemMeta(meta);
-        cElytra = item;
+        cBoots = item;
     }
 }

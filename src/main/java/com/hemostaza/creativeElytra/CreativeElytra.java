@@ -13,7 +13,7 @@ public final class CreativeElytra extends JavaPlugin {
     public void onEnable() {
         ItemManager.init();
 
-        PluginCommand command = getCommand("celytra");
+        PluginCommand command = getCommand("hermes");
         if(command!=null){
             MainCommands mc = new MainCommands();
             command.setExecutor(mc);

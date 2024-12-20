@@ -16,7 +16,7 @@ public class PlayerStartFlight implements Listener {
 
         boolean haveElytra = false;
         try {
-            haveElytra = player.getInventory().getChestplate().getItemMeta().getLore().equals(ItemManager.cElytra.getItemMeta().getLore());
+            haveElytra = player.getInventory().getBoots().getItemMeta().getLore().equals(ItemManager.cBoots.getItemMeta().getLore());
         } catch (NullPointerException e) {
             return;
         }
@@ -25,20 +25,20 @@ public class PlayerStartFlight implements Listener {
             player.setFlying(false);
         }
 
-        ItemStack chest = player.getInventory().getChestplate();
-        Damageable dmg = (Damageable) chest.getItemMeta();
+        ItemStack boots = player.getInventory().getBoots();
+        Damageable dmg = (Damageable) boots.getItemMeta();
 
         if (event.isFlying()) {
             dmg.setDamage(dmg.getDamage() + 1);
             if (dmg.getDamage() > 10) {
-                player.getInventory().getChestplate().setAmount(0);
+                player.getInventory().getBoots().setAmount(0);
                 player.setAllowFlight(false);
                 player.setFlying(false);
             }
-            chest.setItemMeta(dmg);
+            boots.setItemMeta(dmg);
         }else {
             if(dmg.getDamage()==10){
-                player.getInventory().getChestplate().setAmount(0);
+                player.getInventory().getBoots().setAmount(0);
                 player.setAllowFlight(false);
                 player.setFlying(false);
             }
