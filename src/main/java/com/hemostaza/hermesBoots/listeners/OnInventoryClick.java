@@ -26,6 +26,7 @@ public class OnInventoryClick implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event){
+        if(!config.getBoolean("cancharge")) return;
         ItemStack held = event.getCursor();
         ItemStack slot = event.getCurrentItem();
         //jak nic nie wzial to jebac

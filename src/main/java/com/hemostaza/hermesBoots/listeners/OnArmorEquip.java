@@ -64,7 +64,7 @@ public class OnArmorEquip implements Listener {
                 player.setAllowFlight(true);
                 if(!((Entity)player).isOnGround()){
                     player.setFlying(true);
-                    plugin.StartFlyingTimer(player);
+                    //plugin.StartFlyingTimer(player);
                     Bukkit.getScheduler().runTaskLater(plugin, () -> plugin.StartFlyingTimer(player), 1);
                 }
             //}

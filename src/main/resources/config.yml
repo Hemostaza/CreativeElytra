@@ -1,6 +1,8 @@
 firstline: "Allows you to fly like you always wanted"
 chargeitem: "WIND_CHARGE"
 chargefficiency: 200
+cancraft: true
+cancharge: true
 boots:
   name: "Hermes Boots"
   durability: 1800

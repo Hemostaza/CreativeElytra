@@ -29,6 +29,7 @@ public class FlyingTimer extends BukkitRunnable {
 
     @Override
     public void run() {
+        dmg = (Damageable) boots.getItemMeta();
         dmg.setDamage(dmg.getDamage()+1);
         boots.setItemMeta(dmg);
         //Bukkit.getLogger().info("damage on item "+dmg.getDamage());

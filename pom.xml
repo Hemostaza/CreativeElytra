@@ -36,7 +36,7 @@
                     <relocations>
                         <relocation>
                             <pattern>com.jeff_media.armorequipevent</pattern>
-                            <shadedPattern>com.hemostaza.hermesBoots.listeners</shadedPattern>
+                            <shadedPattern>com.hemostaza.hermesBoots</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

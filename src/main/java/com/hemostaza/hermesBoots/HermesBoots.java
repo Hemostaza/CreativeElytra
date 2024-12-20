@@ -42,7 +42,9 @@ public final class HermesBoots extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnInventoryClick(this), this);
         // Plugin startup logic
 
-        AddRecipes();
+        if(getConfig().getBoolean("cancraft")){
+            AddRecipes();
+        }
     }
 
     @Override
