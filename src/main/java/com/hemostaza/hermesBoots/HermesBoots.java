@@ -22,6 +22,7 @@ public final class HermesBoots extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         new ItemManager(this);
 
         MainCommands mc = new MainCommands();
