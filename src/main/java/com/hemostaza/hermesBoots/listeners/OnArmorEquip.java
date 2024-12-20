@@ -1,10 +1,8 @@
-package com.hemostaza.creativeElytra.listeners;
+package com.hemostaza.hermesBoots.listeners;
 
-import com.hemostaza.creativeElytra.CreativeElytra;
-import com.hemostaza.creativeElytra.ItemManager;
+import com.hemostaza.hermesBoots.HermesBoots;
 import com.jeff_media.armorequipevent.ArmorEquipEvent;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -12,17 +10,16 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.Objects;
 import java.util.logging.Logger;
 
 public class OnArmorEquip implements Listener {
 
     Logger l = Bukkit.getLogger();
 
-    CreativeElytra plugin;
+    HermesBoots plugin;
     FileConfiguration config;
 
-    public OnArmorEquip(CreativeElytra plugin) {
+    public OnArmorEquip(HermesBoots plugin) {
         this.plugin = plugin;
         config = plugin.getConfig();
     }

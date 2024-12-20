@@ -1,7 +1,6 @@
-package com.hemostaza.creativeElytra.listeners;
+package com.hemostaza.hermesBoots.listeners;
 
-import com.hemostaza.creativeElytra.CreativeElytra;
-import com.hemostaza.creativeElytra.ItemManager;
+import com.hemostaza.hermesBoots.HermesBoots;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -17,10 +16,10 @@ import java.util.logging.Logger;
 
 public class OnPlayerJoin implements Listener {
 
-    CreativeElytra plugin;
+    HermesBoots plugin;
     FileConfiguration config;
     Logger l = Bukkit.getLogger();
-    public OnPlayerJoin(CreativeElytra plugin){
+    public OnPlayerJoin(HermesBoots plugin){
         this.plugin = plugin;
         config = plugin.getConfig();
     }

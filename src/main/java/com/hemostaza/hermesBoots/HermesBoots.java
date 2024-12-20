@@ -1,9 +1,9 @@
-package com.hemostaza.creativeElytra;
+package com.hemostaza.hermesBoots;
 
-import com.hemostaza.creativeElytra.listeners.OnArmorEquip;
-import com.hemostaza.creativeElytra.listeners.OnInventoryClick;
-import com.hemostaza.creativeElytra.listeners.OnPlayerJoin;
-import com.hemostaza.creativeElytra.listeners.PlayerStartFlight;
+import com.hemostaza.hermesBoots.listeners.OnArmorEquip;
+import com.hemostaza.hermesBoots.listeners.OnInventoryClick;
+import com.hemostaza.hermesBoots.listeners.OnPlayerJoin;
+import com.hemostaza.hermesBoots.listeners.PlayerStartFlight;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -16,7 +16,7 @@ import com.jeff_media.armorequipevent.ArmorEquipEvent;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public final class CreativeElytra extends JavaPlugin {
+public final class HermesBoots extends JavaPlugin {
 
     Logger l = Bukkit.getLogger();
 

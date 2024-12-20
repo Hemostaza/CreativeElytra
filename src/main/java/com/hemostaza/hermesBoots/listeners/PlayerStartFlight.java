@@ -1,7 +1,6 @@
-package com.hemostaza.creativeElytra.listeners;
+package com.hemostaza.hermesBoots.listeners;
 
-import com.hemostaza.creativeElytra.CreativeElytra;
-import com.hemostaza.creativeElytra.ItemManager;
+import com.hemostaza.hermesBoots.HermesBoots;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -15,11 +14,11 @@ import java.util.logging.Logger;
 
 public class PlayerStartFlight implements Listener {
 
-    CreativeElytra plugin;
+    HermesBoots plugin;
     FileConfiguration config;
     Logger l = Bukkit.getLogger();
 
-    public PlayerStartFlight(CreativeElytra plugin){
+    public PlayerStartFlight(HermesBoots plugin){
         this.plugin = plugin;
         config = plugin.getConfig();
     }

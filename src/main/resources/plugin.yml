@@ -1,6 +1,6 @@
-name: creativeElytra
+name: HermesBoots
 version: '1.0-SNAPSHOT'
-main: com.hemostaza.creativeElytra.CreativeElytra
+main: com.hemostaza.hermesBoots.HermesBoots
 api-version: '1.21'
 commands:
   hermes:

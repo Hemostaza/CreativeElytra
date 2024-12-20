@@ -1,4 +1,4 @@
-package com.hemostaza.creativeElytra;
+package com.hemostaza.hermesBoots;
 
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.trim.ArmorTrim;
 import org.bukkit.inventory.meta.trim.TrimMaterial;
 import org.bukkit.inventory.meta.trim.TrimPattern;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ItemManager {
@@ -20,10 +19,10 @@ public class ItemManager {
     public static ItemStack cBoots;
     public static ItemStack cSBoots;
 
-    CreativeElytra plugin;
+    HermesBoots plugin;
     FileConfiguration config;
 
-    public ItemManager(CreativeElytra plugin){
+    public ItemManager(HermesBoots plugin){
         this.plugin = plugin;
         config = plugin.getConfig();
         createWeakBoots();

@@ -1,4 +1,4 @@
-package com.hemostaza.creativeElytra;
+package com.hemostaza.hermesBoots;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
