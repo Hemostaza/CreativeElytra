@@ -15,7 +15,6 @@ public class FlyingTimer extends BukkitRunnable {
 
     int maxDamage;
     int damage;
-    int time;
     Player player;
     public FlyingTimer(CreativeElytra plugin, Player player){
         this.player = player;
@@ -34,7 +33,7 @@ public class FlyingTimer extends BukkitRunnable {
     public void run() {
         dmg.setDamage(dmg.getDamage()+1);
         boots.setItemMeta(dmg);
-        Bukkit.getLogger().info("damage on item "+dmg.getDamage());
+        //Bukkit.getLogger().info("damage on item "+dmg.getDamage());
 
         if(dmg.getDamage()>=maxDamage){
             this.cancel();

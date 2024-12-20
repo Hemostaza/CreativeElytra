@@ -4,6 +4,7 @@ import com.hemostaza.creativeElytra.CreativeElytra;
 import com.hemostaza.creativeElytra.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,9 +18,11 @@ import java.util.logging.Logger;
 public class OnPlayerJoin implements Listener {
 
     CreativeElytra plugin;
+    FileConfiguration config;
     Logger l = Bukkit.getLogger();
     public OnPlayerJoin(CreativeElytra plugin){
         this.plugin = plugin;
+        config = plugin.getConfig();
     }
 
     @EventHandler
@@ -30,21 +33,19 @@ public class OnPlayerJoin implements Listener {
         if(!boots.getType().equals(Material.LEATHER_BOOTS) && !boots.getType().equals(Material.NETHERITE_BOOTS)) return;
         boolean haveBoots = false;
         try{
-            haveBoots = boots.getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore().getFirst());
+            haveBoots = boots.getItemMeta().getLore().getFirst().equals(config.getString("firstline"));
         }catch (NullPointerException e){
-            Bukkit.getLogger().info("don't have boots");
+            //Bukkit.getLogger().info("don't have boots");
             return;
         }
-        l.info("kurwa mac"+boots);
         int maxDamage = ((Damageable)boots.getItemMeta()).getMaxDamage();
         if(!haveBoots || ((Damageable)boots.getItemMeta()).getDamage()>=maxDamage) {
-            Bukkit.getLogger().info("nie ma butow albo sa zjebane");
+            //Bukkit.getLogger().info("nie ma butow albo sa zjebane");
             return;
         }
         player.setAllowFlight(true);
         if(!((Entity)player).isOnGround()){
-
-            Bukkit.getLogger().info("nie na ziemi");
+            //Bukkit.getLogger().info("nie na ziemi");
             player.setFlying(true);
             plugin.StartFlyingTimer(player);
         }

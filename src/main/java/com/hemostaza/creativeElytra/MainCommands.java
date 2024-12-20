@@ -15,12 +15,11 @@ public class MainCommands implements CommandExecutor {
         }
 
         if(cmd.getName().equalsIgnoreCase("hermes")){
-
+            ItemStack item = ItemManager.cBoots;
+            player.getInventory().addItem(item);
+        }
+        if(cmd.getName().equalsIgnoreCase("premiumhermes")){
             ItemStack item = ItemManager.cSBoots;
-            if(args.length>1){
-                int amount = Integer.parseInt(args[1]);
-                item.setAmount(amount);
-            }
             player.getInventory().addItem(item);
         }
         return false;

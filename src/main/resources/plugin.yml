@@ -7,3 +7,7 @@ commands:
     description: "chuj"
     usage: "/hermes <subcommand>"
     aliases: ["boots"]
+  premiumhermes:
+    description: "chuj"
+    usage: "/premiumhermes <subcommand>"
+

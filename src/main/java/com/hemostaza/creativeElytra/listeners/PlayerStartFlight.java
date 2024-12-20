@@ -3,6 +3,7 @@ package com.hemostaza.creativeElytra.listeners;
 import com.hemostaza.creativeElytra.CreativeElytra;
 import com.hemostaza.creativeElytra.ItemManager;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,10 +16,12 @@ import java.util.logging.Logger;
 public class PlayerStartFlight implements Listener {
 
     CreativeElytra plugin;
+    FileConfiguration config;
     Logger l = Bukkit.getLogger();
 
     public PlayerStartFlight(CreativeElytra plugin){
         this.plugin = plugin;
+        config = plugin.getConfig();
     }
 
     @EventHandler
@@ -27,7 +30,7 @@ public class PlayerStartFlight implements Listener {
 
         boolean haveFlyingItem = false;
         try {
-            haveFlyingItem = player.getInventory().getBoots().getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore().getFirst());
+            haveFlyingItem = player.getInventory().getBoots().getItemMeta().getLore().getFirst().equals(config.getString("firstline"));
         } catch (NullPointerException e) {
             return;
         }

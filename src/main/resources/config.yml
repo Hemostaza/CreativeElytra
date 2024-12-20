@@ -1,7 +1,13 @@
+firstline: "Allows you to fly like you always wanted"
+chargeitem: "WIND_CHARGE"
+chargefficiency: 200
 boots:
   name: "Hermes Boots"
+  durability: 1800
   lore:
-    - "Allows you to fly like you always wanted"
-    - "But have it's limits"
+    - "But it has its limits"
 premiumboots:
   name: "Premium Hermes Boots"
+  durability: 1800
+  lore:
+    - "You can charge it back with"

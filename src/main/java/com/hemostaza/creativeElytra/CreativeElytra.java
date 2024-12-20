@@ -1,6 +1,7 @@
 package com.hemostaza.creativeElytra;
 
 import com.hemostaza.creativeElytra.listeners.OnArmorEquip;
+import com.hemostaza.creativeElytra.listeners.OnInventoryClick;
 import com.hemostaza.creativeElytra.listeners.OnPlayerJoin;
 import com.hemostaza.creativeElytra.listeners.PlayerStartFlight;
 import org.bukkit.Bukkit;
@@ -21,18 +22,23 @@ public final class CreativeElytra extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        ItemManager.init();
+        new ItemManager(this);
 
+        MainCommands mc = new MainCommands();
         PluginCommand command = getCommand("hermes");
+        PluginCommand command2 = getCommand("premiumhermes");
         if(command!=null){
-            MainCommands mc = new MainCommands();
             command.setExecutor(mc);
+        }
+        if(command2!=null){
+            command2.setExecutor(mc);
         }
 
         ArmorEquipEvent.registerListener(this);
         getServer().getPluginManager().registerEvents(new OnArmorEquip(this), this);
         getServer().getPluginManager().registerEvents(new PlayerStartFlight(this), this);
         getServer().getPluginManager().registerEvents(new OnPlayerJoin(this), this);
+        getServer().getPluginManager().registerEvents(new OnInventoryClick(this), this);
         // Plugin startup logic
 
         AddRecipes();
@@ -51,9 +57,12 @@ public final class CreativeElytra extends JavaPlugin {
         weakBootsRecipe.setIngredient('B',Material.LEATHER_BOOTS);
         NamespacedKey strongBoots = new NamespacedKey(this,"stronghermesboots");
         ShapedRecipe strongBootsRecipe = new ShapedRecipe(strongBoots,ItemManager.cSBoots);
-        strongBootsRecipe.shape("WBW");
+        strongBootsRecipe.shape("WEW","SRS","WBW");
         strongBootsRecipe.setIngredient('W',Material.WIND_CHARGE);
         strongBootsRecipe.setIngredient('B',Material.NETHERITE_BOOTS);
+        strongBootsRecipe.setIngredient('E',Material.ELYTRA);
+        strongBootsRecipe.setIngredient('S',Material.BREEZE_ROD);
+        strongBootsRecipe.setIngredient('R',Material.REDSTONE_BLOCK);
         Bukkit.addRecipe(weakBootsRecipe);
         Bukkit.addRecipe(strongBootsRecipe);
     }
@@ -68,7 +77,7 @@ public final class CreativeElytra extends JavaPlugin {
             activeTimer.remove(player.getName());
         }
         FlyingTimer newFlyingTimer = new FlyingTimer(this, player);
-        Bukkit.getLogger().info(newFlyingTimer+"");
+        //Bukkit.getLogger().info(newFlyingTimer+"");
         activeTimer.put(player.getName(),newFlyingTimer);
     }
     public void StopFlyingTimer(Player player){

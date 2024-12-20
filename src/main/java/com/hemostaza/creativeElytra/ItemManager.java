@@ -1,6 +1,8 @@
 package com.hemostaza.creativeElytra;
 
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ArmorMeta;
 import org.bukkit.inventory.meta.Damageable;
@@ -17,42 +19,48 @@ public class ItemManager {
     //public static ItemStack cElytra;
     public static ItemStack cBoots;
     public static ItemStack cSBoots;
-    public static void init(){
+
+    CreativeElytra plugin;
+    FileConfiguration config;
+
+    public ItemManager(CreativeElytra plugin){
+        this.plugin = plugin;
+        config = plugin.getConfig();
         createWeakBoots();
         createStrongBoots();
     }
 
-    private static void createStrongBoots() {
+    private void createStrongBoots() {
         ItemStack item = new ItemStack(Material.NETHERITE_BOOTS,1);
         ItemMeta meta = item.getItemMeta();
         assert meta!=null;
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP,ItemFlag.HIDE_ARMOR_TRIM,ItemFlag.HIDE_ATTRIBUTES);
 
-        ((Damageable) meta).setMaxDamage(30);
+        ((Damageable) meta).setMaxDamage(config.getInt("premiumboots.durability"));
         ((Damageable) meta).setDamage(0);
-        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.GOLD, TrimPattern.WILD));
-        meta.setDisplayName("Premium Hermes Boots");
-        List<String> lore = new ArrayList<>();
-        lore.add("Allow you to fly like you always wanted");
-        lore.add("You can charge it with");
-        lore.add("Wind Charge");
+        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.RESIN, TrimPattern.WILD));
+        meta.setDisplayName(config.getString("premiumboots.name"));
+        List<String> lore = config.getStringList("premiumboots.lore");
+        lore.addFirst(config.getString("firstline"));
         meta.setLore(lore);
         ((Repairable)meta).setRepairCost(50);
         item.setItemMeta(meta);
         cSBoots = item;
     }
 
-    private static void createWeakBoots(){
+    private void createWeakBoots(){
         ItemStack item = new ItemStack(Material.LEATHER_BOOTS,1);
         ItemMeta meta = item.getItemMeta();
         assert meta!=null;
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP,ItemFlag.HIDE_ARMOR_TRIM,ItemFlag.HIDE_ATTRIBUTES);
 
-        ((Damageable) meta).setMaxDamage(30);
+        ((Damageable) meta).setMaxDamage(config.getInt("boots.durability"));
         ((Damageable) meta).setDamage(0);
-        meta.setDisplayName("Low quality Hermes Boots");
-        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.QUARTZ, TrimPattern.SNOUT));
-        List<String> lore = new ArrayList<>();
-        lore.add("Allow you to fly like you always wanted");
-        lore.add("But it has limits");
+        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.RESIN, TrimPattern.SNOUT));
+        meta.setDisplayName(config.getString("boots.name"));
+        List<String> lore = config.getStringList("boots.lore");
+        lore.addFirst(config.getString("firstline"));
+        lore.addLast(config.getString("chargeitem").toUpperCase().replace("_",""));
         meta.setLore(lore);
         ((Repairable)meta).setRepairCost(50);
         item.setItemMeta(meta);

@@ -5,12 +5,14 @@ import com.hemostaza.creativeElytra.ItemManager;
 import com.jeff_media.armorequipevent.ArmorEquipEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class OnArmorEquip implements Listener {
@@ -18,9 +20,11 @@ public class OnArmorEquip implements Listener {
     Logger l = Bukkit.getLogger();
 
     CreativeElytra plugin;
+    FileConfiguration config;
 
     public OnArmorEquip(CreativeElytra plugin) {
         this.plugin = plugin;
+        config = plugin.getConfig();
     }
 
     @EventHandler
@@ -32,12 +36,12 @@ public class OnArmorEquip implements Listener {
         boolean isEquipFLyingItem = false;
         boolean isUnequipFlyingItem = false;
         try {
-            isEquipFLyingItem = eqpItem.getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore().getFirst());
+            isEquipFLyingItem = eqpItem.getItemMeta().getLore().getFirst().equals(config.getString("firstline"));
         } catch (NullPointerException e) {
             //l.info("Gdzieś ktoś jest nulerm");
         }
         try {
-            isUnequipFlyingItem = unqItem.getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore().getFirst());
+            isUnequipFlyingItem = unqItem.getItemMeta().getLore().getFirst().equals(config.getString("firstline"));
         } catch (NullPointerException e) {
             //l.info("Gdzieś ktoś jest nulerm");
         }
@@ -47,18 +51,18 @@ public class OnArmorEquip implements Listener {
         }
 
         if (isUnequipFlyingItem) {
-            Material unqMat = unqItem.getType();
-            if (unqMat.equals(Material.LEATHER_BOOTS) || unqMat.equals(Material.NETHERITE_BOOTS)) {
+            //Material unqMat = unqItem.getType();
+            //if (unqMat.equals(Material.LEATHER_BOOTS) || unqMat.equals(Material.NETHERITE_BOOTS)) {
                 //l.info("Zdejowanie buta");
 
                 player.setFlying(false);
                 player.setAllowFlight(false);
                 plugin.StopFlyingTimer(player);
-            }
+            //}
         }
         if (isEquipFLyingItem) {
-            Material eqpMat = eqpItem.getType();
-            if (eqpMat.equals(Material.LEATHER_BOOTS) || eqpMat.equals(Material.NETHERITE_BOOTS)) {
+            //Material eqpMat = eqpItem.getType();
+            //if (eqpMat.equals(Material.LEATHER_BOOTS) || eqpMat.equals(Material.NETHERITE_BOOTS)) {
                 //l.info("zakłądanie buty");
                 player.setAllowFlight(true);
                 if(!((Entity)player).isOnGround()){
@@ -66,7 +70,7 @@ public class OnArmorEquip implements Listener {
                     plugin.StartFlyingTimer(player);
                     Bukkit.getScheduler().runTaskLater(plugin, () -> plugin.StartFlyingTimer(player), 1);
                 }
-            }
+            //}
         }
     }
 }
