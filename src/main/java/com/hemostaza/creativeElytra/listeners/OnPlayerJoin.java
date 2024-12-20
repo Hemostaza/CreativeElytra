@@ -20,14 +20,19 @@ public class OnPlayerJoin implements Listener {
         if(!boots.getType().equals(Material.LEATHER_BOOTS)) return;
         boolean haveBoots = false;
         try{
-            haveBoots = boots.getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore());
+            haveBoots = boots.getItemMeta().getLore().getFirst().equals(ItemManager.cBoots.getItemMeta().getLore().getFirst());
         }catch (NullPointerException e){
             Bukkit.getLogger().info("don't have boots");
             return;
         }
-        if(!haveBoots) return;
+        if(!haveBoots) {
+            Bukkit.getLogger().info(haveBoots+" ma buty");
+            return;
+        }
         player.setAllowFlight(true);
         if(!((Entity)player).isOnGround()){
+
+            Bukkit.getLogger().info("nie na ziemi");
             player.setFlying(true);
         }
     }
