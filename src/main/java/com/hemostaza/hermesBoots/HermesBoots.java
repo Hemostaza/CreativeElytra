@@ -54,9 +54,10 @@ public final class HermesBoots extends JavaPlugin {
     public void AddRecipes(){
         NamespacedKey weakBoots = new NamespacedKey(this,"weakhermesboots");
         ShapedRecipe weakBootsRecipe = new ShapedRecipe(weakBoots,ItemManager.cBoots);
-        weakBootsRecipe.shape("MMM","WBW","MMM");
+        weakBootsRecipe.shape("MEM","MRM","MBM");
+        weakBootsRecipe.setIngredient('R',Material.REDSTONE_BLOCK);
+        weakBootsRecipe.setIngredient('E',Material.ELYTRA);
         weakBootsRecipe.setIngredient('M',Material.PHANTOM_MEMBRANE);
-        weakBootsRecipe.setIngredient('W',Material.WIND_CHARGE);
         weakBootsRecipe.setIngredient('B',Material.LEATHER_BOOTS);
         NamespacedKey strongBoots = new NamespacedKey(this,"stronghermesboots");
         ShapedRecipe strongBootsRecipe = new ShapedRecipe(strongBoots,ItemManager.cSBoots);
