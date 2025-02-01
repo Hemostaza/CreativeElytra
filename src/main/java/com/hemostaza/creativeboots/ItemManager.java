@@ -37,7 +37,7 @@ public class ItemManager {
 
         ((Damageable) meta).setMaxDamage(config.getInt("premiumboots.durability"));
         ((Damageable) meta).setDamage(0);
-        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.RESIN, TrimPattern.WILD));
+        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.REDSTONE, TrimPattern.WILD));
         meta.setDisplayName(config.getString("premiumboots.name"));
         List<String> lore = config.getStringList("premiumboots.lore");
         lore.addFirst(config.getString("firstline"));
@@ -56,7 +56,7 @@ public class ItemManager {
 
         ((Damageable) meta).setMaxDamage(config.getInt("boots.durability"));
         ((Damageable) meta).setDamage(0);
-        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.RESIN, TrimPattern.SNOUT));
+        ((ArmorMeta)meta).setTrim(new ArmorTrim(TrimMaterial.REDSTONE, TrimPattern.SNOUT));
         meta.setDisplayName(config.getString("boots.name"));
         List<String> lore = config.getStringList("boots.lore");
         lore.addFirst(config.getString("firstline"));

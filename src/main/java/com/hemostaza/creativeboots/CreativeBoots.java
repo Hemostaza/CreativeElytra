@@ -26,6 +26,8 @@ public final class CreativeBoots extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
 
+        new UpdateChecker(this,122316);
+
         try{
             matesial2Charge = Material.valueOf(getConfig().getString("chargeitem").toUpperCase());
         }catch (IllegalArgumentException e){
