@@ -1,7 +1,8 @@
 #This is the first line in lore for both types of boots.
 firstline: "Allows you to fly like you always wanted"
 
-#This is item used to charge premium boots
+#This is item Material used to charge premiumboots
+#https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 chargeitem: "WIND_CHARGE"
 
 #This indicates how many seconds of flying are restored when charging.
