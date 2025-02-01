@@ -1,13 +1,10 @@
 name: HermesBoots
-version: '1.0-SNAPSHOT'
+version: '${project.version}'
 main: com.hemostaza.hermesBoots.HermesBoots
 api-version: '1.21'
 commands:
-  hermes:
-    description: "chuj"
-    usage: "/hermes <subcommand>"
-    aliases: ["boots"]
-  premiumhermes:
-    description: "chuj"
-    usage: "/premiumhermes <subcommand>"
-
+  giveboots:
+    description: "Give boots to player"
+    usage: "/giveboots <player> <normal/premium>"
+    aliases: ["givehermes","gboots"]
+    permission: op

@@ -41,7 +41,7 @@ public class ItemManager {
         meta.setDisplayName(config.getString("premiumboots.name"));
         List<String> lore = config.getStringList("premiumboots.lore");
         lore.addFirst(config.getString("firstline"));
-        lore.addLast(config.getString("chargeitem").toUpperCase().replace("_"," "));
+        lore.addLast(plugin.getMatesial2Charge().name().replace("_"," "));
         meta.setLore(lore);
         ((Repairable)meta).setRepairCost(50);
         item.setItemMeta(meta);

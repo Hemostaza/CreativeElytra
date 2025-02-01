@@ -20,13 +20,26 @@ public final class HermesBoots extends JavaPlugin {
 
     Logger l = Bukkit.getLogger();
 
+    private Material matesial2Charge;
+
     @Override
     public void onEnable() {
         saveDefaultConfig();
+
+        try{
+            matesial2Charge = Material.valueOf(getConfig().getString("chargeitem").toUpperCase());
+        }catch (IllegalArgumentException e){
+            l.info("Wrong charge material in config, will be set to default WIND_CHARGE");
+            matesial2Charge = Material.WIND_CHARGE;
+        }catch (NullPointerException e){
+            l.info("There is no config for chargeitem, will be set to default WIND_CHARGE");
+            matesial2Charge = Material.WIND_CHARGE;
+        }
+
         new ItemManager(this);
 
         MainCommands mc = new MainCommands();
-        PluginCommand command = getCommand("hermes");
+        PluginCommand command = getCommand("giveboots");
         PluginCommand command2 = getCommand("premiumhermes");
         if(command!=null){
             command.setExecutor(mc);
@@ -51,6 +64,11 @@ public final class HermesBoots extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
+
+    public Material getMatesial2Charge() {
+        return matesial2Charge;
+    }
+
     public void AddRecipes(){
         NamespacedKey weakBoots = new NamespacedKey(this,"weakhermesboots");
         ShapedRecipe weakBootsRecipe = new ShapedRecipe(weakBoots,ItemManager.cBoots);

@@ -1,15 +1,25 @@
+#This is the first line in lore for both types of boots.
 firstline: "Allows you to fly like you always wanted"
+
+#This is item used to charge premium boots
 chargeitem: "WIND_CHARGE"
+
+#This indicates how many seconds of flying are restored when charging.
 chargefficiency: 200
+
+#This is option to turn off crafting
 cancraft: true
-cancharge: true
+
 boots:
   name: "Hermes Boots"
+  #This is time in seconds how long boots can fly
   durability: 1800
   lore:
     - "But it has its limits"
 premiumboots:
   name: "Premium Hermes Boots"
+  #This is time in seconds how long boots can fly
   durability: 1800
   lore:
     - "You can charge it back with"
+  #  - WIND CHARGE * in premium boots last line of lore is always item used in charging

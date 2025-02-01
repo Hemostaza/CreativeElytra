@@ -26,25 +26,14 @@ public class OnInventoryClick implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event){
-        if(!config.getBoolean("cancharge")) return;
+        //if(!config.getBoolean("cancharge")) return;
         ItemStack held = event.getCursor();
         ItemStack slot = event.getCurrentItem();
         //jak nic nie wzial to jebac
         if(held==null)return;
+        if(held.getType().equals(Material.AIR))return;
         //jak nie item do ladowania to jebac
-        Material material;
-        String configMat = config.getString("chargeitem");
-        if(configMat==null || configMat.isEmpty()){
-            material = Material.WIND_CHARGE;
-        }else{
-            try{
-                material = Material.valueOf(configMat.toUpperCase());
-            }catch (IllegalArgumentException e){
-                Bukkit.getLogger().info("Wrong charge material in config");
-                material=Material.WIND_CHARGE;
-            }
-        }
-        if(!held.getType().equals(material)) return;
+        if(!held.getType().equals(plugin.getMatesial2Charge())) return;
         //jak nie klikniecie PPM to jebac
         if(!event.getClick().equals(ClickType.RIGHT)) return;
         //jak w slocie nie ma netherowych lataczy
@@ -55,13 +44,9 @@ public class OnInventoryClick implements Listener {
 
         Damageable bootsMeta = (Damageable) slot.getItemMeta();
         int currentDmg = bootsMeta.getDamage();
+        //buty nie sa zepsute to jebac
         if(currentDmg==0) return;
         event.setCancelled(true);
-        //int efficiency = config.getInt("chargefficiency");
-//        if(efficiency==0){
-//            l.info("config chargeefficiency is 0 set to default 200");
-//            efficiency = 200;
-//        }
         int replenish = currentDmg-config.getInt("chargefficiency");
         if(replenish<=0){
             replenish=0;
