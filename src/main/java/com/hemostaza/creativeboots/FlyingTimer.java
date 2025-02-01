@@ -1,4 +1,4 @@
-package com.hemostaza.hermesBoots;
+package com.hemostaza.creativeboots;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -7,14 +7,14 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class FlyingTimer extends BukkitRunnable {
 
-    HermesBoots plugin;
+    CreativeBoots plugin;
     ItemStack boots;
     Damageable dmg;
 
     int maxDamage;
     int damage;
     Player player;
-    public FlyingTimer(HermesBoots plugin, Player player){
+    public FlyingTimer(CreativeBoots plugin, Player player){
         this.player = player;
         this.plugin = plugin;
         this.boots = player.getInventory().getBoots();

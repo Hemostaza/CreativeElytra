@@ -11,13 +11,13 @@ chargefficiency: 200
 cancraft: true
 
 boots:
-  name: "Hermes Boots"
+  name: "CloudStep Boots"
   #This is time in seconds how long boots can fly
   durability: 1800
   lore:
     - "But it has its limits"
 premiumboots:
-  name: "Premium Hermes Boots"
+  name: "SkyCharge Boots"
   #This is time in seconds how long boots can fly
   durability: 1800
   lore:

@@ -1,7 +1,7 @@
-package com.hemostaza.hermesBoots.listeners;
+package com.hemostaza.creativeboots.listeners;
 
-import com.hemostaza.hermesBoots.HermesBoots;
-import com.hemostaza.hermesBoots.ItemManager;
+import com.hemostaza.creativeboots.CreativeBoots;
+import com.hemostaza.creativeboots.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -16,10 +16,10 @@ import java.util.logging.Logger;
 
 public class OnInventoryClick implements Listener {
 
-    HermesBoots plugin;
+    CreativeBoots plugin;
     FileConfiguration config;
     Logger l = Bukkit.getLogger();
-    public OnInventoryClick(HermesBoots plugin){
+    public OnInventoryClick(CreativeBoots plugin){
         this.plugin = plugin;
         config = plugin.getConfig();
     }

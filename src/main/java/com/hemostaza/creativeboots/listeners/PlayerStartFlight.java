@@ -1,6 +1,6 @@
-package com.hemostaza.hermesBoots.listeners;
+package com.hemostaza.creativeboots.listeners;
 
-import com.hemostaza.hermesBoots.HermesBoots;
+import com.hemostaza.creativeboots.CreativeBoots;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 
 public class PlayerStartFlight implements Listener {
 
-    HermesBoots plugin;
+    CreativeBoots plugin;
     FileConfiguration config;
     Logger l = Bukkit.getLogger();
 
-    public PlayerStartFlight(HermesBoots plugin){
+    public PlayerStartFlight(CreativeBoots plugin){
         this.plugin = plugin;
         config = plugin.getConfig();
     }

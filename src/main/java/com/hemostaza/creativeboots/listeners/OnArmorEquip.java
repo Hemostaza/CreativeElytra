@@ -1,6 +1,6 @@
-package com.hemostaza.hermesBoots.listeners;
+package com.hemostaza.creativeboots.listeners;
 
-import com.hemostaza.hermesBoots.HermesBoots;
+import com.hemostaza.creativeboots.CreativeBoots;
 import com.jeff_media.armorequipevent.ArmorEquipEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -16,10 +16,10 @@ public class OnArmorEquip implements Listener {
 
     Logger l = Bukkit.getLogger();
 
-    HermesBoots plugin;
+    CreativeBoots plugin;
     FileConfiguration config;
 
-    public OnArmorEquip(HermesBoots plugin) {
+    public OnArmorEquip(CreativeBoots plugin) {
         this.plugin = plugin;
         config = plugin.getConfig();
     }

@@ -1,9 +1,9 @@
-package com.hemostaza.hermesBoots;
+package com.hemostaza.creativeboots;
 
-import com.hemostaza.hermesBoots.listeners.OnArmorEquip;
-import com.hemostaza.hermesBoots.listeners.OnInventoryClick;
-import com.hemostaza.hermesBoots.listeners.OnPlayerJoin;
-import com.hemostaza.hermesBoots.listeners.PlayerStartFlight;
+import com.hemostaza.creativeboots.listeners.OnArmorEquip;
+import com.hemostaza.creativeboots.listeners.OnInventoryClick;
+import com.hemostaza.creativeboots.listeners.OnPlayerJoin;
+import com.hemostaza.creativeboots.listeners.PlayerStartFlight;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -16,7 +16,7 @@ import com.jeff_media.armorequipevent.ArmorEquipEvent;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public final class HermesBoots extends JavaPlugin {
+public final class CreativeBoots extends JavaPlugin {
 
     Logger l = Bukkit.getLogger();
 

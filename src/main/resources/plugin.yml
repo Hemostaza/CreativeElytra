@@ -1,6 +1,6 @@
-name: HermesBoots
+name: FlyingBoots
 version: '${project.version}'
-main: com.hemostaza.hermesBoots.HermesBoots
+main: com.hemostaza.creativeboots.CreativeBoots
 api-version: '1.21'
 commands:
   giveboots:

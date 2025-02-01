@@ -1,4 +1,4 @@
-package com.hemostaza.hermesBoots;
+package com.hemostaza.creativeboots;
 
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -19,10 +19,10 @@ public class ItemManager {
     public static ItemStack cBoots;
     public static ItemStack cSBoots;
 
-    HermesBoots plugin;
+    CreativeBoots plugin;
     FileConfiguration config;
 
-    public ItemManager(HermesBoots plugin){
+    public ItemManager(CreativeBoots plugin){
         this.plugin = plugin;
         config = plugin.getConfig();
         createWeakBoots();
