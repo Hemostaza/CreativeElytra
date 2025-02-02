@@ -51,8 +51,8 @@ public class UpdateChecker {
                 latestVersion = "";
             }
             if(ResultMessage()==null){
-                Bukkit.getLogger().info("["+plugin.getName()+"] is in the latest version");
-            }else Bukkit.getLogger().info(ResultMessage());
+                plugin.getLogger().info("["+plugin.getName()+"] is in the latest version");
+            }else plugin.getLogger().info(ResultMessage());
         });
     }
 

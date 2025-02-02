@@ -9,6 +9,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.logging.Logger;
 
@@ -29,7 +31,12 @@ public class PlayerStartFlight implements Listener {
 
         boolean haveFlyingItem = false;
         try {
-            haveFlyingItem = player.getInventory().getBoots().getItemMeta().getLore().getFirst().equals(config.getString("firstline"));
+            PersistentDataContainer container = player.getInventory().getBoots().getItemMeta().getPersistentDataContainer();
+            if(container.has(plugin.getKey(), PersistentDataType.STRING)) {
+                String type = container.get(plugin.getKey(), PersistentDataType.STRING);
+                haveFlyingItem = true;
+            }
+            //haveFlyingItem = player.getInventory().getBoots().getItemMeta().getLore().getFirst().equals(config.getString("firstline"));
         } catch (NullPointerException e) {
             return;
         }

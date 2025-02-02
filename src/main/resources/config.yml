@@ -11,6 +11,7 @@ chargefficiency: 200
 #This is option to turn off crafting
 cancraft: true
 
+#name, durability and lore can be changed.
 boots:
   name: "CloudStep Boots"
   #This is time in seconds how long boots can fly
@@ -23,4 +24,5 @@ premiumboots:
   durability: 1800
   lore:
     - "You can charge it back with"
-  #  - WIND CHARGE * in premium boots last line of lore is always item used in charging
+    - "{*}"
+#{*} is to show chargeitem in lore, but it's not required.

@@ -6,7 +6,7 @@
 
     <groupId>com.hemostaza</groupId>
     <artifactId>flying-boots</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>flying-boots</name>
@@ -50,6 +50,8 @@
                 </executions>
             </plugin>
         </plugins>
+        <outputDirectory>\chuj\</outputDirectory>
+        <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
