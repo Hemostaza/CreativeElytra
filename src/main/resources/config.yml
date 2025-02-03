@@ -17,12 +17,14 @@ boots:
   #This is time in seconds how long boots can fly
   durability: 1800
   lore:
+    - "Now you can fly"
     - "But it has its limits"
 premiumboots:
   name: "SkyCharge Boots"
   #This is time in seconds how long boots can fly
   durability: 1800
   lore:
+    - "Unlimited flying!"
     - "You can charge it back with"
     - "{*}"
-#{*} is to show chargeitem in lore, but it's not required.
+#{*} is to show chargeitem in lore. It's not required but it's good to show what item is used.

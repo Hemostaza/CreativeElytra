@@ -48,17 +48,17 @@ public class UpdateChecker {
                 }
             } catch (IOException e) {
                 plugin.getLogger().info("Unable to check for updates: " + e.getMessage());
-                latestVersion = "";
+                latestVersion = currentVersion;
             }
             if(ResultMessage()==null){
-                plugin.getLogger().info("["+plugin.getName()+"] is in the latest version");
+                plugin.getLogger().info("plugin is in the latest version");
             }else plugin.getLogger().info(ResultMessage());
         });
     }
 
     public String ResultMessage(){
         if(!currentVersion.equals(latestVersion)) {
-            return "["+plugin.getName() + "] has a newer version available.\nhttps://www.spigotmc.org/resources/" + plugin.getName() + "." + resourceId;
+            return "plugin has a newer version available.\nhttps://www.spigotmc.org/resources/" + plugin.getName() + "." + resourceId;
         }
         return null;
     }
